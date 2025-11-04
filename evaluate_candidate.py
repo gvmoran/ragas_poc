@@ -81,21 +81,26 @@ def main():
 
     data = {
         "question": [
-            "What is object-oriented programming?"
+            "What is object-oriented programming?",
+            "Explain the concept of polymorphism.",
+            "Explain the difference between stack and heap memory.",
+            "Define the term 'DRY' in software development."
         ],
         "response": [
-            "It is a way of programming based on objects and classes that represent real-world entities."
-            #"It is programming secuentially organized with sentences like goto and if to control the flow."
-            #"Object-oriented programming (OOP) is a computer programming model that organizes software design around data, or objects, rather than functions and logic. An object can be defined as a data field that has unique attributes and behavior."
-            #"Programming a meeting in an activity that every one can do. People use meetings to organize their work and share ideas."
-            #"Object-oriented programming (OOP) is a programming paradigm based on objects and classes that encapsulate data and behaviors."
-            #"Object-oriented programming (OOP) is a programming paradigm based on the object – a software entity that encapsulates data and function(s). An OOP computer program consists of objects that interact with one another."
+            "It is a way of programming based on objects and classes that represent real-world entities.",
             #ai generated response
-            #"Object-oriented programming (OOP) is a programming paradigm that organizes software design around data, or objects, rather than functions and logic. It models real-world entities using classes and objects to promote modularity, reusability, and scalability."
+            "Polymorphism in object-oriented programming (OOP) allows objects of different classes to be treated as objects of a common superclass, enabling the same interface to behave differently depending on the underlying object.", 
+            "Stack memory is the main space of the machine memory where primitives are stored. Heap memory is the secondary memory space where everything else goes, complex objects, large objects and so on and they are subject of garbage collection.",
+            #ai generated response
+            "DRY stands for 'Don't Repeat Yourself' — a core principle in software development that aims to reduce code duplication by ensuring that every piece of knowledge or logic exists in a single, unambiguous place."
+
             
         ],
         "ground_truth": [
-            "Object-oriented programming (OOP) is a programming paradigm based on objects and classes that encapsulate data and behaviors."
+            "Object-oriented programming (OOP) is a programming paradigm based on objects and classes that encapsulate data and behaviors.",
+            "Polymorphism allows objects of different classes to be treated as objects of a common superclass, enabling method overriding.",
+            "Stack memory stores local variables and function calls; heap memory is for dynamic allocation. Stack operates in LIFO, heap managed manually or by garbage collection.",
+            "DRY (Don't Repeat Yourself) advocates for avoiding code duplication by reusing existing code."
         ]
     }
 
@@ -126,6 +131,7 @@ def main():
 
     print("Evaluation Results:")
     df = results.to_pandas().T
+    df.to_csv("gemini_evaluation_results.csv")
     print(df)
 
     

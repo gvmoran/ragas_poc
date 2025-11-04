@@ -2,3 +2,4 @@
 .venv*
 __pycache__/
 ragas-poc-873330de7502.json
+*.csv
