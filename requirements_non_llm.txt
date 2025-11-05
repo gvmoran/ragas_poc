@@ -1,2 +1,3 @@
 ragas
 sacrebleu
+rouge_score
